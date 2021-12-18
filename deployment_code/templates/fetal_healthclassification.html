@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Fetal Arc</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/templatemo-chain-app-dev.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/animated.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/owl.css')}}">
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="index.html">Home</a></li>
+              <li class="scroll-to-section"><a href="fetal_birthweight.html">Fetal Birth Weight</a></li>
+              <li class="scroll-to-section"><a href="fetalhc_opt.html" class="active">Fetal Health</a></li>
+              <li class="scroll-to-section"><a href="#"><p style="color:white;">About</p></a></li>
+            </ul>
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8 offset-lg-2">
+          <div class="pricing-item-regular">
+            <h4>Know the Fetal Health (NORMAL/ SUSPECT/ PATHOLOGICAL)</h4>
+            <h5>Kindly enter the following values</h5><br>
+            <form method="POST" action="{{url_for('fetalhealthclassify')}}">
+
+                <label for="bval">Baseline Fetal Heart Rate</label><br>
+                <input type="number" id="bval" name="bval"
+                       placeholder="eg:133.3"
+                       min="100"
+                       max="165"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv1">Number of accelerations per second</label><br>
+                <input type="number" id="vv1" name="vv1"
+                       placeholder="eg:0"
+                       min="0"
+                       max="0.020"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv2">Number of fetal movements per second</label><br>
+                <input type="number" id="vv2" name="vv2"
+                       placeholder="eg:0"
+                       min="0"
+                       max="0.500"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv3">Number of uterine contractions per second</label><br>
+                <input type="number" id="vv3" name="vv3"
+                       placeholder="eg:0"
+                       min="0"
+                       max="0.020"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv4">Number of Light Decelerations per second</label><br>
+                <input type="number" id="vv4" name="vv4"
+                       placeholder="eg:0"
+                       min="0"
+                       max="0.020"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv5">Number of Severe Decelerations per second</label><br>
+                <input type="number" id="vv5" name="vv5"
+                       placeholder="eg:0"
+                       min="0"
+                       max="0.005"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv6">Number of Prolongued Decelerations per second</label><br>
+                <input type="number" id="vv6" name="vv6"
+                       placeholder="eg:0"
+                       min="0"
+                       max="0.009"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv7">Percentage of time with abnormal short term variability</label><br>
+                <input type="number" id="vv7" name="vv7"
+                       placeholder="eg:73"
+                       min="10"
+                       max="90"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv8">Mean value of short term variability</label><br>
+                <input type="number" id="vv8" name="vv8"
+                       placeholder="eg:0.5"
+                       min="0"
+                       max="8"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv9">Percentage of time with abnormal long term variability</label><br>
+                <input type="number" id="vv9" name="vv9"
+                       placeholder="eg:43"
+                       min="0"
+                       max="91"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv10">Mean value of long term variability</label><br>
+                <input type="number" id="vv10" name="vv10"
+                       placeholder="eg:2.4"
+                       min="0"
+                       max="51"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv11">Width of the histogram made using all values from a record</label><br>
+                <input type="number" id="vv11" name="vv11"
+                       placeholder="eg:64"
+                       min="2"
+                       max="185"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv12">Histogram minimum value</label><br>
+                <input type="number" id="vv12" name="vv12"
+                       placeholder="eg:62"
+                       min="45"
+                       max="165"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv13">Histogram maximum value</label><br>
+                <input type="number" id="vv13" name="vv13"
+                       placeholder="eg:126"
+                       min="120"
+                       max="240"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv14">Number of peaks in the exam histogram</label><br>
+                <input type="number" id="vv14" name="vv14"
+                       placeholder="eg:2"
+                       min="0"
+                       max="25"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv15">Number of zeroes in the exam histogram</label><br>
+                <input type="number" id="vv15" name="vv15"
+                       placeholder="eg:0"
+                       min="0"
+                       max="15"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv16">Histogram mean</label><br>
+                <input type="number" id="vv16" name="vv16"
+                       placeholder="eg:137"
+                       min="70"
+                       max="185"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv17">Histogram variance</label><br>
+                <input type="number" id="vv17" name="vv17"
+                       placeholder="eg:73"
+                       min="0"
+                       max="275"
+                       step=".000001"
+                       required><br><br>
+
+                <label for="vv18">Histogram trend</label><br>
+                <input type="number" id="vv18" name="vv18"
+                       placeholder="eg:1"
+                       min="-1"
+                       max="1"
+                       step=".000001"
+                       required><br><br>
+
+
+            <div class="border-button">
+              <button type="submit" style="border-radius: 12px;padding: 16px 32px;
+              color: white;border-color: #2196F3;background-color: rgb(59, 144, 230);font-family: 'Roboto';">Proceed</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright © 2021 Simran. All Rights Reserved.
+              (RollNo: MT21146 | IIITD | email: simran21146@iiitd.ac.in)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/owl-carousel.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/animation.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/imagesloaded.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/popup.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/custom.js')}}"></script>
+</body>
+</html>

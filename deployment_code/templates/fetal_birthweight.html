@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Fetal Arc</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/templatemo-chain-app-dev.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/animated.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/owl.css')}}">
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="index.html">Home</a></li>
+              <li class="scroll-to-section"><a href="fetal_birthweight.html" class="active">Fetal Birth Weight</a></li>
+              <li class="scroll-to-section"><a href="fetalhc_opt.html">Fetal Health</a></li>
+              <li class="scroll-to-section"><a href="#"><p style="color:white;">About</p></a></li>
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8 offset-lg-2">
+          <div class="pricing-item-regular">
+            <h4>Know the Fetal Birth Weight estimation (in kgs)</h4>
+            <form method="POST" action="{{url_for('fetalbwprediction')}}">
+
+                <label for="gage">Enter Gestational Age (in days)</label><br>
+                <input type="number" id="gage" name="gage"
+                       placeholder="eg:280"
+                       min="180"
+                       max="335"
+                       step=".01"
+                       required><br><br>
+
+                <label for="mage">Enter Mother's Age (in years)</label><br>
+                <input type="number" id="mage" name="mage"
+                       placeholder="eg:35"
+                       min="0.1"
+                       max="150"
+                       step=".01"
+                       required><br><br>
+
+                <label for="mheight">Enter Mother's Height (in inches)</label><br>
+                <input type="number" id="mheight" name="mheight"
+                        placeholder="eg:62"
+                        min="6"
+                        max="108"
+                        step=".01"
+                        required><br><br>
+
+                <label for="mweight">Enter Mother's Weight (in kgs)</label><br>
+                <input type="number" id="mweight" name="mweight"
+                        placeholder="eg:60"
+                        min="30"
+                        max="300"
+                        step=".01"
+                        required><br><br>
+
+                <label for="smoke">Does Mother Smoke?</label><br>
+                <select
+                name="smoke"
+                id="smoke"
+                required>
+                <option selected>No</option>
+                <option>Yes</option>
+                </select><br><br>
+
+                <label for="parity">Is this your first baby?</label><br>
+                <select
+                name="parity"
+                id="parity"
+                required>
+                <option selected>No</option>
+                <option>Yes</option>
+                </select>
+
+            <div class="border-button">
+              <button type="submit" style="border-radius: 12px;padding: 16px 32px;
+              color: white;border-color: #2196F3;background-color: rgb(59, 144, 230);font-family: 'Roboto';">Proceed</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <footer id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright © 2021 Simran. All Rights Reserved. 
+              (RollNo: MT21146 | IIITD | email: simran21146@iiitd.ac.in)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/owl-carousel.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/animation.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/imagesloaded.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/popup.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/js/custom.js')}}"></script>
+</body>
+</html>
