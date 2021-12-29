@@ -60,4 +60,4 @@ the features of mother.
 ## Link for deployed website
 https://fetalhealth-simran.herokuapp/
 
-For more details, kindly have a look at repository and attached report, ppt
+For more details, kindly have a look at repository and attached ppt
