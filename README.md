@@ -60,4 +60,7 @@ the features of mother.
 ## Link for deployed website
 https://fetalhealth-simran.herokuapp/
 
+## Link for medium article
+https://medium.com/analytics-vidhya/fetal-arc-predicting-fetal-health-and-birth-weight-of-the-fetus-using-machine-learning-5d6726323904
+
 For more details, kindly have a look at repository and attached ppt
